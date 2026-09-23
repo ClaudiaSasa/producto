@@ -1,0 +1,1 @@
+SELECT * FROM herbolario_gourmet.detalle_pedido;

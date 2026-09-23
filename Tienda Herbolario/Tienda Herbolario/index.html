@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Tienda virtual Herbolario Gourmet">
+
+    <title>Herbolario Gourmet | Tienda Virtual</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🌿 Herbolario <span>Gourmet</span>
+            </div>
+
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#inicio">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#categorias">Categorías</a>
+                </li>
+
+                <li>
+                    <a href="#productos">Productos</a>
+                </li>
+
+                <li>
+                    <a href="#nosotros">Nosotros</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+
+            <!-- Carrito -->
+
+            <button
+                class="carrito-btn"
+                onclick="mostrarCarrito()">
+
+                🛒 Carrito
+
+                <span id="contador">
+                    0
+                </span>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= INICIO ================= -->
+
+    <main>
+
+        <section
+            id="inicio"
+            class="hero">
+
+            <div class="hero-contenido">
+
+                <p class="etiqueta">
+                    TIENDA NATURAL
+                </p>
+
+                <h1>
+                    Productos naturales
+                    <span>con sabor gourmet</span>
+                </h1>
+
+                <p>
+                    Descubre hierbas, especias e infusiones
+                    seleccionadas para acompañar tus
+                    mejores preparaciones.
+                </p>
+
+                <a
+                    href="#productos"
+                    class="btn">
+
+                    Ver productos
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORÍAS ================= -->
+
+        <section
+            id="categorias"
+            class="seccion">
+
+            <div class="contenedor">
+
+                <h2>
+                    Explora nuestras categorías
+                </h2>
+
+                <p class="descripcion">
+                    Encuentra productos naturales
+                    para diferentes necesidades.
+                </p>
+
+
+                <div class="categorias-grid">
+
+
+                    <article
+                        class="categoria">
+
+                        <div class="categoria-icono">
+                            🌿
+                        </div>
+
+                        <h3>
+                            Hierbas
+                        </h3>
+
+                        <p>
+                            Hierbas seleccionadas
+                            para diferentes preparaciones.
+                        </p>
+
+                        <button
+                            onclick="filtrarCategoria('hierbas')">
+
+                            Explorar
+
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="categoria">
+
+                        <div class="categoria-icono">
+                            🌼
+                        </div>
+
+                        <h3>
+                            Especias
+                        </h3>
+
+                        <p>
+                            Especias aromáticas
+                            para darle sabor a tus recetas.
+                        </p>
+
+                        <button
+                            onclick="filtrarCategoria('especias')">
+
+                            Explorar
+
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="categoria">
+
+                        <div class="categoria-icono">
+                            🍵
+                        </div>
+
+                        <h3>
+                            Infusiones
+                        </h3>
+
+                        <p>
+                            Selección de infusiones
+                            para disfrutar en cualquier momento.
+                        </p>
+
+                        <button
+                            onclick="filtrarCategoria('infusiones')">
+
+                            Explorar
+
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRODUCTOS ================= -->
+
+        <section
+            id="productos"
+            class="productos">
+
+            <div class="contenedor">
+
+                <p class="etiqueta">
+                    NUESTRA SELECCIÓN
+                </p>
+
+                <h2>
+                    Productos destacados
+                </h2>
+
+
+                <!-- Buscador -->
+
+                <div class="buscador">
+
+                    <input
+                        type="text"
+                        id="buscador"
+                        placeholder="Buscar producto..."
+                        onkeyup="buscarProducto()">
+
+                    🔎
+
+                </div>
+
+
+                <div
+                    id="productos-grid"
+                    class="productos-grid">
+
+
+                    <!-- PRODUCTO 1 -->
+
+                    <article
+                        class="producto"
+                        data-nombre="curcuma"
+                        data-categoria="especias">
+
+                        <div class="producto-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=700&q=80"
+                                alt="Cúrcuma">
+
+                        </div>
+
+                        <div class="producto-info">
+
+                            <span class="categoria-producto">
+                                Especia
+                            </span>
+
+                            <h3>
+                                Cúrcuma Gourmet
+                            </h3>
+
+                            <p>
+                                Especia de color amarillo
+                                y sabor característico.
+                            </p>
+
+                            <strong>
+                                $15.000
+                            </strong>
+
+                            <button
+                                onclick="agregarCarrito('Cúrcuma Gourmet', 15000)">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 2 -->
+
+                    <article
+                        class="producto"
+                        data-nombre="jengibre"
+                        data-categoria="hierbas">
+
+                        <div class="producto-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=700&q=80"
+                                alt="Jengibre">
+
+                        </div>
+
+                        <div class="producto-info">
+
+                            <span class="categoria-producto">
+                                Hierba
+                            </span>
+
+                            <h3>
+                                Jengibre Natural
+                            </h3>
+
+                            <p>
+                                Raíz aromática utilizada
+                                en bebidas y recetas.
+                            </p>
+
+                            <strong>
+                                $12.000
+                            </strong>
+
+                            <button
+                                onclick="agregarCarrito('Jengibre Natural', 12000)">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 3 -->
+
+                    <article
+                        class="producto"
+                        data-nombre="canela"
+                        data-categoria="especias">
+
+                        <div class="producto-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=700&q=80"
+                                alt="Canela">
+
+                        </div>
+
+                        <div class="producto-info">
+
+                            <span class="categoria-producto">
+                                Especia
+                            </span>
+
+                            <h3>
+                                Canela Natural
+                            </h3>
+
+                            <p>
+                                Especia aromática ideal
+                                para bebidas y postres.
+                            </p>
+
+                            <strong>
+                                $10.000
+                            </strong>
+
+                            <button
+                                onclick="agregarCarrito('Canela Natural', 10000)">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PRODUCTO 4 -->
+
+                    <article
+                        class="producto"
+                        data-nombre="te verde"
+                        data-categoria="infusiones">
+
+                        <div class="producto-imagen">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=700&q=80"
+                                alt="Té verde">
+
+                        </div>
+
+                        <div class="producto-info">
+
+                            <span class="categoria-producto">
+                                Infusión
+                            </span>
+
+                            <h3>
+                                Té Verde
+                            </h3>
+
+                            <p>
+                                Infusión elaborada
+                                a partir de hojas seleccionadas.
+                            </p>
+
+                            <strong>
+                                $18.000
+                            </strong>
+
+                            <button
+                                onclick="agregarCarrito('Té Verde', 18000)">
+
+                                Agregar al carrito
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOSOTROS ================= -->
+
+        <section
+            id="nosotros"
+            class="nosotros">
+
+            <div class="contenedor nosotros-grid">
+
+                <div>
+
+                    <p class="etiqueta">
+                        SOBRE NOSOTROS
+                    </p>
+
+                    <h2>
+                        Naturalmente diferente
+                    </h2>
+
+                    <p>
+                        Herbolario Gourmet es una propuesta
+                        de tienda virtual enfocada en ofrecer
+                        productos naturales, hierbas, especias
+                        e infusiones.
+                    </p>
+
+                    <p>
+                        Nuestro objetivo es brindar una
+                        experiencia de compra sencilla,
+                        clara y agradable.
+                    </p>
+
+                </div>
+
+
+                <div class="beneficios">
+
+                    <div>
+                        🌱
+                        <strong>
+                            Productos seleccionados
+                        </strong>
+                    </div>
+
+                    <div>
+                        🛒
+                        <strong>
+                            Compra sencilla
+                        </strong>
+                    </div>
+
+                    <div>
+                        📦
+                        <strong>
+                            Presentación de calidad
+                        </strong>
+                    </div>
+
+                    <div>
+                        💻
+                        <strong>
+                            Tienda virtual
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACTO ================= -->
+
+        <section
+            id="contacto"
+            class="contacto">
+
+            <div class="contenedor">
+
+                <h2>
+                    Contáctanos
+                </h2>
+
+                <p>
+                    ¿Tienes alguna pregunta?
+                    Escríbenos.
+                </p>
+
+
+                <form
+                    onsubmit="enviarFormulario(event)">
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        placeholder="Nombre"
+                        required>
+
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Correo electrónico"
+                        required>
+
+
+                    <textarea
+                        id="mensaje"
+                        placeholder="Escribe tu mensaje"
+                        required>
+                    </textarea>
+
+
+                    <button
+                        type="submit"
+                        class="btn">
+
+                        Enviar mensaje
+
+                    </button>
+
+                </form>
+
+
+                <p id="respuesta"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= MODAL CARRITO ================= -->
+
+    <div
+        id="modal-carrito"
+        class="modal">
+
+        <div class="modal-contenido">
+
+            <button
+                class="cerrar"
+                onclick="cerrarCarrito()">
+
+                ✕
+
+            </button>
+
+            <h2>
+                🛒 Mi carrito
+            </h2>
+
+            <div id="lista-carrito">
+
+                <p>
+                    Tu carrito está vacío.
+                </p>
+
+            </div>
+
+            <hr>
+
+            <h3>
+                Total:
+                <span id="total">
+                    $0
+                </span>
+            </h3>
+
+            <button
+                class="btn"
+                onclick="finalizarCompra()">
+
+                Finalizar compra
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h2>
+                    🌿 Herbolario Gourmet
+                </h2>
+
+                <p>
+                    Productos naturales
+                    con sabor gourmet.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Navegación
+                </h3>
+
+                <a href="#inicio">
+                    Inicio
+                </a>
+
+                <a href="#productos">
+                    Productos
+                </a>
+
+                <a href="#nosotros">
+                    Nosotros
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contacto
+                </h3>
+
+                <p>
+                    📧 contacto@herbolariogourmet.com
+                </p>
+
+                <p>
+                    📱 +57 300 000 0000
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 Herbolario Gourmet
+            </p>
+
+            <p>
+                Evidencia GA6-220501096-AA4-EV03
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
